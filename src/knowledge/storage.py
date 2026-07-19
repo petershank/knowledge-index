@@ -62,3 +62,24 @@ class KnowledgeDB:
             """, (doc.id, doc.title, doc.content))
             
             conn.commit()
+
+    def search(self, query_string: str, limit: int = 10):
+        """Searches the FTS5 virtual table and joins metadata to return matching documents."""
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            
+            # MATCH activates SQLite's fast full-text index.
+            # snippet() extracts a 10-word window around your search term.
+            cursor.execute("""
+                SELECT d.path, f.title, snippet(documents_fts, 2, '==>', '<==', '...', 10) as match_snippet
+                FROM documents_fts f
+                JOIN documents d ON d.id = f.id
+                WHERE documents_fts MATCH ?
+                ORDER BY rank
+                LIMIT ?
+            """, (query_string, limit))
+            
+            return cursor.fetchall()
+
+
+            
