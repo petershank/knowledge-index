@@ -1,0 +1,21 @@
+{
+  "name": "knowledge-index",
+  "version": "1.0.0",
+  "description": "A lightweight, high-performance personal \"Second Brain\" pipeline. It aggregates, normalizes, and indexes local files into a single, lightning-fast searchable knowledge base.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petershank/knowledge-index.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petershank/knowledge-index/issues"
+  },
+  "homepage": "https://github.com/petershank/knowledge-index#readme"
+}
