@@ -50,3 +50,4 @@ python -m knowledge.search "your_search_term"
 - 🔍 **Advanced FTS5 Queries**: Upgrade the search utility to support wildcards (e.g., `fac*` matches `factors`), prefix matching, and complex Boolean logic (`prime AND practice`).
 - 🏷️ **Schema Refinement & Language Tags**: Extend the metadata table to capture code languages, file extensions, or tags for precise query filtering.
 - 🤖 **Semantic Vector Embeddings**: Integrate a local embedding model to unlock meaning-based semantic search alongside your keyword matching.
+- **custom logic for weighting matches higher in search results** Make rules for "if string matched in file name" vs "matched in markdown **caption**" vs "matched a function or data declaration" etc
